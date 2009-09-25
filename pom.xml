@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ * Copyright (C) 2009 Sonatype, Inc.                                                                                                                          
+ * 
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ * 
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ * 
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see http://www.gnu.org/licenses/.
+ -->
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>org.sonatype.plugins</groupId>
+    <artifactId>plugins-parent</artifactId>
+    <version>4</version>
+  </parent>
+  
+  <artifactId>maven-repository-collector-plugin</artifactId>
+  <packaging>maven-plugin</packaging>
+  <version>1.0-SNAPSHOT</version>
+  
+  <name>Repository-Collector Maven Plugin</name>
+  
+  <description>
+    Plugin which gathers artifact references from dependencies, plugins, report plugins, plugin management, and dependency management, then
+    allows the user to perform various tasks with these assembled artifacts.
+  </description>
+  
+  <dependencies>
+    <dependency>
+      <groupId>org.apache.maven</groupId>
+      <artifactId>maven-plugin-api</artifactId>
+      <version>2.2.1</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.maven</groupId>
+      <artifactId>maven-artifact</artifactId>
+      <version>2.2.1</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.maven</groupId>
+      <artifactId>maven-artifact-manager</artifactId>
+      <version>2.2.1</version>
+    </dependency>
+    <dependency>
+    	<groupId>org.apache.maven</groupId>
+    	<artifactId>maven-project</artifactId>
+    	<version>2.2.1</version>
+    </dependency>
+    <dependency>
+    	<groupId>org.apache.maven.shared</groupId>
+    	<artifactId>maven-repository-builder</artifactId>
+    	<version>1.0-alpha-2</version>
+    </dependency>
+    <dependency>
+    	<groupId>org.apache.maven.shared</groupId>
+    	<artifactId>maven-artifact-resolver</artifactId>
+    	<version>1.0</version>
+    	<type>jar</type>
+    	<scope>compile</scope>
+    </dependency>
+    <dependency>
+    	<groupId>org.apache.maven</groupId>
+    	<artifactId>maven-core</artifactId>
+    	<version>2.2.1</version>
+    </dependency>
+  </dependencies>
+  
+  <build>
+    <plugins>
+      <plugin>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>2.0.2</version>
+        <configuration>
+          <source>1.5</source>
+          <target>1.5</target>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+  
+  <licenses>
+    <license>
+      <name>GPL</name>
+      <url>http://www.gnu.org/licenses/gpl.txt</url>
+      <distribution>repo</distribution>
+    </license>
+  </licenses>
+  
+  <scm>
+    <connection>scm:svn:http://svn.sonatype.org/plugins/trunk/${project.artifactId}</connection>
+    <url>http://svn.sonatype.org/plugins/trunk/${project.artifactId}</url>
+    <developerConnection>scm:svn:https://svn.sonatype.org/plugins/trunk/${project.artifactId}</developerConnection>
+  </scm>
+  
+  <distributionManagement>
+    <site>
+      <id>sonatype.org-sites</id>
+      <url>${pluginsSiteBaseUrl}/${project.artifactId}</url>
+    </site>
+  </distributionManagement>
+</project>
