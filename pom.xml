@@ -25,7 +25,7 @@
   
   <artifactId>maven-repository-collector-plugin</artifactId>
   <packaging>maven-plugin</packaging>
-  <version>1.0</version>
+  <version>1.1-SNAPSHOT</version>
   
   <name>Repository-Collector Maven Plugin</name>
   
@@ -96,9 +96,9 @@
   </licenses>
   
   <scm>
-    <connection>scm:svn:http://svn.sonatype.org/plugins/tags/maven-repository-collector-plugin-1.0</connection>
-    <url>http://svn.sonatype.org/plugins/tags/maven-repository-collector-plugin-1.0</url>
-    <developerConnection>scm:svn:https://svn.sonatype.org/plugins/tags/maven-repository-collector-plugin-1.0</developerConnection>
+    <connection>scm:svn:http://svn.sonatype.org/plugins/trunk/maven-repository-collector-plugin</connection>
+    <url>http://svn.sonatype.org/plugins/trunk/maven-repository-collector-plugin</url>
+    <developerConnection>scm:svn:https://svn.sonatype.org/plugins/trunk/maven-repository-collector-plugin</developerConnection>
   </scm>
   
   <distributionManagement>
