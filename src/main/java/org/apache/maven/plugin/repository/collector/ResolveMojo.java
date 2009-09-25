@@ -164,6 +164,28 @@ public class ResolveMojo
             throw new MojoExecutionException( "Failed to resolve project artifacts: " + e.getMessage(), e );
         }
         
+        if ( getProject().getParentArtifact() != null )
+        {
+            Artifact parentPomArtifact = getProject().getParentArtifact();
+            parentPomArtifact =
+                getArtifactFactory().createProjectArtifact( parentPomArtifact.getGroupId(),
+                                                            parentPomArtifact.getArtifactId(),
+                                                            parentPomArtifact.getVersion() );
+
+            try
+            {
+                getMavenProjectBuilder().buildFromRepository( parentPomArtifact,
+                                                              project.getRemoteArtifactRepositories(),
+                                                              selectedSession.getLocalRepository() );
+            }
+            catch ( ProjectBuildingException e )
+            {
+                getLog().debug(
+                                "Failed to resolve parent POM: " + getProject().getParentArtifact().getId()
+                                    + ", continuing (it may be reachable on disk)." );
+            }
+        }
+
         if ( result != null && !result.isEmpty() )
         {
             List<Artifact> sorted = new ArrayList<Artifact>( result );
