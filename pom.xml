@@ -20,7 +20,7 @@
   <parent>
     <groupId>org.sonatype.plugins</groupId>
     <artifactId>plugins-parent</artifactId>
-    <version>4</version>
+    <version>5-SNAPSHOT</version>
   </parent>
   
   <artifactId>maven-repository-collector-plugin</artifactId>
